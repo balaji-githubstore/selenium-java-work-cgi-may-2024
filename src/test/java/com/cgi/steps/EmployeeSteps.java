@@ -3,6 +3,10 @@ package com.cgi.steps;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
+
+import com.cgi.base.AutomationWrapper;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,14 +14,9 @@ import io.cucumber.java.en.When;
 
 public class EmployeeSteps {
 	
-	@Given("I have browser with orange hrm application")
-	public void i_have_browser_with_orange_hrm_application() {
-		System.out.println("given");
-	}
-
 	@When("I click on PIM Menu")
 	public void i_click_on_pim_menu() {
-
+		AutomationWrapper.driver.findElement(By.xpath("//span[normalize-space()='PIM']")).click();
 	}
 
 	@When("I click on Add Employee")
